@@ -15,7 +15,9 @@ a{
     box-sizing: border-box;
     font-family: "Golos Text", sans-serif;
 }
-
+body {
+  overflow-y: scroll; /* ← forces scrollbar to always show */
+}
 .button-primary{
     color: white;
     background-color: var(--primary-color);
