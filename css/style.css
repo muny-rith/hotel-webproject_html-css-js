@@ -767,11 +767,11 @@ a {
 @media(max-width: 768px) {
     .card-item .title {
         padding-left: 25px;
-        font-size: 32px;
+        font-size: 28px;
     }
     .card-item .sub-title {
         padding-left: 25px;
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 
