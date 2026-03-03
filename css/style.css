@@ -421,7 +421,7 @@ a {
     display: flex;
     flex-direction: column;
 }
-@media(max-width:576px) {
+@media(max-width:575px) {
     .container-hotelFacilities {
         padding: 0 10px 0 10px;
     }
