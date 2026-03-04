@@ -420,15 +420,15 @@ a {
 .container-hotelFacilities {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
+
     /* padding: 10px; */
 }
 
 @media (max-width:575px) {
-=======
+
 }
 @media(max-width:575px) {
->>>>>>> 4f6287f5b946998cff145dc2779dec28c6973fd2
+
     .container-hotelFacilities {
         padding: 0 10px 0 10px;
     }
@@ -886,6 +886,69 @@ a {
         font-size: 18px;
     }
 }
+
+/* FAQ */
+
+.container-FAQ{
+    display: flex;
+    flex-direction: column;
+}
+.container-FAQ .title{
+    justify-items: start;
+    text-align: start;
+}
+.container-FAQ .wrap{
+    width: 100%;
+}
+.container-FAQ ul li{
+    list-style: none;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.container-FAQ ul li label{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 700;
+    cursor: pointer;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(145, 142, 142, 0.76);
+    p{
+        font-weight: 700;
+
+    }
+
+}
+/* .container-FAQ ul li label span{
+
+    transform: rotate(90deg);
+    font-size: 20px;
+    color: #333;
+
+} */
+
+
+.container-FAQ input[type="radio"] {
+    display: none;
+}
+.container-FAQ .content{
+    padding:  0 10px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s;
+}
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* When radio is checked, find the label's .arrow via general sibling */
+input[type="radio"]:checked ~ label .arrow {
+    transform: rotate(90deg);
+}
+/* .arrow { transition: transform 0.3s ease; }
+.arrow.open { transform: rotate(90deg); } */
 
 
 /* our block */
