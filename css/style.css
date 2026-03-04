@@ -420,10 +420,15 @@ a {
 .container-hotelFacilities {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     /* padding: 10px; */
 }
 
 @media (max-width:575px) {
+=======
+}
+@media(max-width:575px) {
+>>>>>>> 4f6287f5b946998cff145dc2779dec28c6973fd2
     .container-hotelFacilities {
         padding: 0 10px 0 10px;
     }
@@ -1011,4 +1016,8 @@ a {
     align-items: center;
     justify-content: center;
     /* font-size: 15px; */
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4f6287f5b946998cff145dc2779dec28c6973fd2
