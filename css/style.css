@@ -5,6 +5,7 @@
     --third-color: #f2ede6;
     --fourth-color: #5c4e48;
     --fifth-color: #efeff0dc;
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a {
@@ -46,10 +47,12 @@ body {
 .title {
     text-align: center;
     justify-items: center;
+
     h6 {
         color: var(--primary-color);
         margin: 10px;
     }
+
     h1 {
         margin: 10px
     }
@@ -84,6 +87,7 @@ body {
 /* --- sm: 576px and up --- */
 
 @media (min-width: 576px) {
+
     .container,
     .container-sm {
         /* max-width: 540px; */
@@ -95,6 +99,7 @@ body {
 /* --- md: 768px and up --- */
 
 @media (min-width: 768px) {
+
     .container,
     .container-sm,
     .container-md {
@@ -108,6 +113,7 @@ body {
 /* --- lg: 992px and up --- */
 
 @media (min-width: 992px) {
+
     .container,
     .container-sm,
     .container-md,
@@ -121,6 +127,7 @@ body {
 /* --- xl: 1200px and up --- */
 
 @media (min-width: 1200px) {
+
     .container,
     .container-sm,
     .container-md,
@@ -134,6 +141,7 @@ body {
 /* --- xxl: 1400px and up --- */
 
 @media (min-width: 1400px) {
+
     .container,
     .container-sm,
     .container-md,
@@ -223,9 +231,11 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
     a {
         color: black;
     }
+
     * {
         padding: 0 20px 0 20px;
     }
@@ -424,9 +434,8 @@ a {
     /* padding: 10px; */
 }
 
-@media (max-width:575px) {
+@media (max-width:575px) {}
 
-}
 @media(max-width:575px) {
 
     .container-hotelFacilities {
@@ -438,6 +447,7 @@ a {
     display: flex;
     flex-direction: column;
     width: 100%;
+
     >* {
         width: 100%;
     }
@@ -447,6 +457,7 @@ a {
     .container-hotelFacilities .wrap {
         flex-direction: row;
         justify-content: space-between;
+
         >* {
             width: 49%;
             /* padding: 10px; */
@@ -506,12 +517,14 @@ a {
     border-radius: 15px;
     background-color: white;
     padding: 20px 30px 20px 30px;
+
     .title {
         justify-items: start;
         text-align: left;
         border-bottom: 1px solid rgba(179, 174, 170, 0.63);
         padding-bottom: 5px;
     }
+
     .value {
         padding-top: 50px;
         justify-items: start;
@@ -548,13 +561,16 @@ a {
     display: flex;
     width: 100%;
     margin: 10px 0px 10px 0px;
+
     .title {
         width: 50%;
+
         h1,
         h6 {
             text-align: left;
         }
     }
+
     .sub-title {
         width: 50%;
         text-align: left;
@@ -564,13 +580,16 @@ a {
 @media (max-width: 992px) {
     .container-experience-comfort .wrap1 {
         flex-direction: column;
+
         .title {
             width: 100%;
+
             h1,
             h6 {
                 text-align: center;
             }
         }
+
         .sub-title {
             width: 100%;
             text-align: center;
@@ -583,6 +602,7 @@ a {
     justify-content: center;
     align-items: center;
     margin: 10px 0px 10px 0px;
+
     a {
         font-weight: 600;
         font-size: 14px;
@@ -593,13 +613,16 @@ a {
         color: var(--second-color);
         cursor: pointer;
     }
+
     a:hover {
         background-color: white;
     }
+
     .active {
         color: white;
         background-color: var(--primary-color);
     }
+
     .active:hover {
         background-color: var(--primary-color);
     }
@@ -645,6 +668,7 @@ a {
     0% {
         transform: scale(0.4);
     }
+
     100% {
         transform: scale(1);
     }
@@ -871,6 +895,7 @@ a {
     .card-item .title {
         font-size: 22px;
     }
+
     .card-item .sub-title {
         font-size: 12px;
     }
@@ -881,6 +906,7 @@ a {
         padding-left: 25px;
         font-size: 28px;
     }
+
     .card-item .sub-title {
         padding-left: 25px;
         font-size: 18px;
@@ -889,66 +915,118 @@ a {
 
 /* FAQ */
 
-.container-FAQ{
+.container-FAQ {
     display: flex;
     flex-direction: column;
 }
-.container-FAQ .title{
+
+.container-FAQ .title {
     justify-items: start;
     text-align: start;
 }
-.container-FAQ .wrap{
+
+.container-FAQ .accordion {
     width: 100%;
-}
-.container-FAQ ul li{
-    list-style: none;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-.container-FAQ ul li label{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-weight: 700;
-    cursor: pointer;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(145, 142, 142, 0.76);
-    p{
-        font-weight: 700;
-
-    }
-
+    flex-direction: column;
+    padding: 10px;
 }
-/* .container-FAQ ul li label span{
 
-    transform: rotate(90deg);
-    font-size: 20px;
-    color: #333;
+.container-FAQ .accordion .accordion-item {
+    overflow: hidden;
+}
 
+.container-FAQ .accordion .accordion-item .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    padding: 15px 0px;
+    transition: background 320ms ease;
+    border-bottom: 1px solid rgba(83, 81, 81, 0.651);
+    .accordion-title{
+        p{
+            font-weight: 600;
+        }
+    }
+}
+
+/* .container-FAQ .accordion .accordion-item .accordion-header .accordion-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.container-FAQ .accordion .accordion-item.open .accordion-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    opacity: 0;
 } */
 
 
-.container-FAQ input[type="radio"] {
-    display: none;
-}
-.container-FAQ .content{
-    padding:  0 10px;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.5s;
-}
-.arrow {
-    display: inline-block;
-    transition: transform 0.3s ease;
+
+/* Icon */
+  .accordion-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .accordion-icon::before,
+  .accordion-icon::after {
+    content: '';
+    position: absolute;
+    background:  #888;
+    border-radius: 2px;
+    transition: transform 320ms var(--ease),
+                background 320ms var(--ease),
+                opacity 320ms var(--ease);
+  }
+
+  /* horizontal bar */
+  .accordion-icon::before {
+    width: 14px; height: 1.5px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* vertical bar */
+  .accordion-icon::after {
+    width: 1.5px; height: 14px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .accordion-item.open .accordion-icon::before,
+  .accordion-item.open .accordion-icon::after {
+    background: #888;
+  }
+
+  .accordion-item.open .accordion-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    opacity: 0;
+  }
+
+/* Body — height animation trick */
+.container-FAQ .accordion .accordion-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 320ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 10px 10px;
 }
 
-/* When radio is checked, find the label's .arrow via general sibling */
-input[type="radio"]:checked ~ label .arrow {
-    transform: rotate(90deg);
+.container-FAQ .accordion .accordion-item.open .accordion-body {
+    grid-template-rows: 1fr;
+
 }
-/* .arrow { transition: transform 0.3s ease; }
-.arrow.open { transform: rotate(90deg); } */
+
+.container-FAQ .accordion .accordion-body-inner {
+    overflow: hidden;
+}
+
+.container-FAQ .accordion .accordion-content {}
 
 
 /* our block */
@@ -1012,11 +1090,14 @@ input[type="radio"]:checked ~ label .arrow {
     /* font-size: 20px; */
     color: black;
     margin-bottom: 10px;
+    text-align: start;
 }
 
 .container-ourBlog .wrap .card .content {
     color: gray;
+    text-align: left;
 }
+
 
 
 /* footer */
@@ -1079,8 +1160,10 @@ input[type="radio"]:checked ~ label .arrow {
     align-items: center;
     justify-content: center;
     /* font-size: 15px; */
-<<<<<<< HEAD
+    <<<<<<< HEAD
 }
+
 =======
 }
->>>>>>> 4f6287f5b946998cff145dc2779dec28c6973fd2
+
+>>>>>>>4f6287f5b946998cff145dc2779dec28c6973fd2
