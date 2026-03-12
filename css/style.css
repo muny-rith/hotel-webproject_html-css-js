@@ -156,7 +156,7 @@ body {
     padding: 20px 10px 20px 10px;
 }
 
-nav {
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -172,12 +172,12 @@ nav {
     transition: transform 0.35s ease, box-shadow 0.3s ease;
 }
 
-nav.hide {
+.navbar.hide {
     transform: translateY(-100%);
     /* better than top: -60px, GPU accelerated */
 }
 
-nav.scrolled {
+.navbar.scrolled {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -186,7 +186,7 @@ a {
 }
 
 /* Logo */
-nav .logo {
+.navbar .logo {
     background-image: url('../image/logo-black.webp');
     background-position: center;
     background-size: contain;
@@ -198,14 +198,14 @@ nav .logo {
 }
 
 /* Nav Links */
-nav .nav-links {
+.navbar .nav-links {
     display: flex;
     align-items: center;
     gap: 0;
     /* controlled by the a padding */
 }
 
-nav .nav-links a {
+.navbar .nav-links a {
     color: #222;
     font-weight: 700;
     /* font-size: 0.9rem; */
@@ -214,7 +214,7 @@ nav .nav-links a {
     transition: color 0.3s;
 }
 
-nav .nav-links a::after {
+.navbar .nav-links a::after {
     content: '';
     position: absolute;
     bottom: -4px;
@@ -226,32 +226,32 @@ nav .nav-links a::after {
     transition: transform 0.5s ease;
 }
 
-nav .nav-links a:hover {
+.navbar .nav-links a:hover {
     color: black;
 
 
 }
-nav .nav-links a.active {
+.navbar .nav-links a.active {
     color: var(--primary-color);
 }
 
-nav .nav-links a.active::after {
+.navbar .nav-links a.active::after {
     transform: scaleX(1);
 }
 
-nav .nav-links a:hover::after {
+.navbar .nav-links a:hover::after {
     transform: scaleX(1);
 }
 
 /* Actions */
-nav .nav-actions {
+.navbar .nav-actions {
     display: flex;
     align-items: center;
     gap: 12px;
     flex-shrink: 0;
 }
 
-nav .nav-actions .button-primary {
+.navbar .nav-actions .button-primary {
     /* background: #222; */
     color: #fff;
     border-radius: 22px;
@@ -261,12 +261,12 @@ nav .nav-actions .button-primary {
     transition: background 0.25s, transform 0.2s;
 }
 
-nav .nav-actions .button-primary:hover {
+.navbar .nav-actions .button-primary:hover {
     background: #4b3404;
     transform: translateY(-1px);
 }
 
-nav .nav-actions .nav-toggle {
+.navbar .nav-actions .nav-toggle {
     display: none;
     background: none;
     border: none;
@@ -278,19 +278,19 @@ nav .nav-actions .nav-toggle {
 
 /* ── Mobile ── */
 @media (max-width: 768px) {
-    nav {
+    .navbar {
         padding: 0 20px;
     }
 
-    nav .nav-actions .button-primary {
+    .navbar .nav-actions .button-primary {
         display: none;
     }
 
-    nav .nav-actions .nav-toggle {
+    .navbar .nav-actions .nav-toggle {
         display: block;
     }
 
-    nav .nav-links {
+   .navbar .nav-links {
         position: fixed;
         /* fixed not absolute, so it covers full page on scroll too */
         top: 60px;
@@ -307,18 +307,18 @@ nav .nav-actions .nav-toggle {
         transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    nav .nav-links.open {
+    .navbar .nav-links.open {
         transform: translateX(0);
     }
 
-    nav .nav-links a {
+    .navbar .nav-links a {
         font-size: 1.4rem;
         font-weight: 600;
         padding: 16px 0;
         color: #000000;
     }
 
-    nav .nav-links a::after {
+    .navbar .nav-links a::after {
         display: none;
     }
 }
