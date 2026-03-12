@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" nav-links="width=device-width, initial-scale=1.0" />
     <title>Holtel Website</title>
 
     <script src="https://kit.fontawesome.com/b090237137.js" crossorigin="anonymous"></script>
@@ -16,27 +16,41 @@
 </head>
 
 <body>
-    <nav id="navbar">
-        <div class="Logo"></div>
-
-        <div class="center">
-            <a href="">Home</a>
-            <a href="">Rooms</a>
-            <a href="">Pages</a>
-            <a href="">Blog</a>
-            <a href="">Contact</a>
+    <nav id="navbar" class="navbar">
+        <div class="logo">
+            <a href="#"></a>
         </div>
 
-        <div>
-            <a href="" style="
-      background-color: #caa05c;
-      color: aliceblue;
-      border-radius: 22px;
-      padding: 9px 20px 9px 20px;
-      font-weight: bold;
-      ">Reservation</a>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Rooms</a>
+            <a href="#">Pages</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+            <a href="#" class="button-primary">Reservation</a>
+            <button class="nav-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </nav>
+
+
+    <!-- container-slideshow -->
+    <div class="cover-container">
+        <div class="container-slideshow">
+            <div class="caption">
+                <div class="display-1">Experience the Ultimate Harmony of Luxury</div>
+            </div>
+            <div class="content">
+                <p>Make your vacation unforgettable with the perfect blend of luxury and comfort designed for total
+                    relaxation.</p>
+            </div>
+            <a href="#" class="button-primary">Explore Room</a>
+        </div>
+    </div>
 
     <!-- container-explore-room -->
     <div class="container-explore-room container">
@@ -397,7 +411,7 @@
                 </div>
                 <div class="accordion-body">
                     <div class="accordion-body-inner">
-                        <div class="accordion-content">
+                        <div class="accordion-nav-links">
                             <p>Check-in starts at 2:00 PM and check-out is at 12:00 PM. Early check-in and late
                                 check-out are available upon request and subject to availability.</p>
                         </div>
@@ -413,7 +427,7 @@
                 </div>
                 <div class="accordion-body">
                     <div class="accordion-body-inner">
-                        <div class="accordion-content">
+                        <div class="accordion-nav-links">
                             <p>Yes, we provide airport transfers and private shuttle services. Please contact us in
                                 advance to arrange transportation.</p>
                         </div>
@@ -429,8 +443,9 @@
                 </div>
                 <div class="accordion-body">
                     <div class="accordion-body-inner">
-                        <div class="accordion-content">
-                            <p>We welcome small pets in designated pet-friendly rooms. Additional cleaning fees may apply.</p>
+                        <div class="accordion-nav-links">
+                            <p>We welcome small pets in designated pet-friendly rooms. Additional cleaning fees may
+                                apply.</p>
                         </div>
                     </div>
                 </div>
@@ -444,8 +459,9 @@
                 </div>
                 <div class="accordion-body">
                     <div class="accordion-body-inner">
-                        <div class="accordion-content">
-                            <p>Yes, complimentary high-speed Wi-Fi is available throughout the hotel, including rooms and public areas.</p>
+                        <div class="accordion-nav-links">
+                            <p>Yes, complimentary high-speed Wi-Fi is available throughout the hotel, including rooms
+                                and public areas.</p>
                         </div>
                     </div>
                 </div>
@@ -459,8 +475,9 @@
                 </div>
                 <div class="accordion-body">
                     <div class="accordion-body-inner">
-                        <div class="accordion-content">
-                            <p>Guests can enjoy our swimming pool, fitness center, spa, restaurant, lounge bar, and business center. Facility access varies by room type.</p>
+                        <div class="accordion-nav-links">
+                            <p>Guests can enjoy our swimming pool, fitness center, spa, restaurant, lounge bar, and
+                                business center. Facility access varies by room type.</p>
                         </div>
                     </div>
                 </div>
@@ -474,8 +491,9 @@
                 </div>
                 <div class="accordion-body">
                     <div class="accordion-body-inner">
-                        <div class="accordion-content">
-                            <p>Yes, we offer daily breakfast with continental and international options. Breakfast is included for certain room packages.</p>
+                        <div class="accordion-nav-links">
+                            <p>Yes, we offer daily breakfast with continental and international options. Breakfast is
+                                included for certain room packages.</p>
                         </div>
                     </div>
                 </div>
@@ -497,7 +515,7 @@
                         <h4>Top Hotel Amenities That Guests Love in 2025 Trends</h4>
                     </a>
                 </div>
-                <div class="content">
+                <div class="nav-links">
                     <p>
                         From smart-room technology to wellness features that elevate guest comfort and overall
                         satisfaction.
@@ -512,7 +530,7 @@
                         <h4>Top Hotel Amenities That Guests Love in 2025 Trends</h4>
                     </a>
                 </div>
-                <div class="content">
+                <div class="nav-links">
                     <p>
                         From smart-room technology to wellness features that elevate guest comfort and overall
                         satisfaction.
@@ -528,7 +546,7 @@
                         <h4>Top Hotel Amenities That Guests Love in 2025 Trends</h4>
                     </a>
                 </div>
-                <div class="content">
+                <div class="nav-links">
                     <p>
                         From smart-room technology to wellness features that elevate guest comfort and overall
                         satisfaction.
@@ -544,7 +562,7 @@
                         <h4>Top Hotel Amenities That Guests Love in 2025 Trends</h4>
                     </a>
                 </div>
-                <div class="content">
+                <div class="nav-links">
                     <p>
                         From smart-room technology to wellness features that elevate guest comfort and overall
                         satisfaction.
@@ -591,59 +609,56 @@
 
 </html>
 
+
+
 <script>
+
+    // ── Active link
+    const links = document.querySelectorAll(".navbar .nav-links a");
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            links.forEach(l => l.classList.remove("active"));
+            link.classList.add("active");
+        });
+    });
+    const toggle = document.querySelector(".navbar .nav-toggle");
+    const navLinks = document.querySelector(".navbar .nav-links");
     const navbar = document.getElementById("navbar");
     let lastScrollY = window.scrollY;
 
+    // ── Close menu helper
+    function closeMenu() {
+        navLinks.classList.remove("open");
+        toggle.querySelector('i').classList.replace('fa-xmark', 'fa-bars');
+    }
+
+    // ── Mobile toggle
+    toggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.contains("open");
+        if (isOpen) {
+            closeMenu();
+        } else {
+            navLinks.classList.add("open");
+            toggle.querySelector('i').classList.replace('fa-bars', 'fa-xmark');
+        }
+    });
+
+    // ── Hide on scroll down, show on scroll up
     window.addEventListener("scroll", () => {
         const currentScrollY = window.scrollY;
 
+        navbar.classList.toggle("scrolled", currentScrollY > 10);
+
         if (currentScrollY > lastScrollY && currentScrollY > 60) {
-            // Scroll Down — hide
             navbar.classList.add("hide");
+            closeMenu();
         } else {
-            // Scroll Up — show
             navbar.classList.remove("hide");
         }
 
         lastScrollY = currentScrollY;
-    });
-</script>
-
-<script>
-    // document.querySelectorAll('input[name="accordion"]').forEach(input => {
-    //     input.addEventListener('click', () => {
-    //         const content = input.parentElement.querySelector('.content');
-    //         const isOpen = content.style.display !== 'none';
-
-    //         // Close all
-    //         document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
-    //         document.querySelectorAll('input[name="accordion"]').forEach(i => i.checked = false);
-
-    //         // If it wasn't open, open it
-    //         if (!isOpen) {
-    //             content.style.display = 'block';
-    //             input.checked = true;
-    //         }
-    //     });
-    // });
-
-    // document.querySelectorAll('input[name="accordion"]').forEach(input => {
-    //     input.addEventListener('click', () => {
-    //         const content = input.parentElement.querySelector('.content');
-    //         const isOpen = content.style.display === 'block'; // fixed check
-
-    //         // Close all
-    //         document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
-    //         document.querySelectorAll('input[name="accordion"]').forEach(i => i.checked = false);
-
-    //         // If it wasn't open, open it
-    //         if (!isOpen) {
-    //             content.style.display = 'block';
-    //             input.checked = true;
-    //         }
-    //     });
-    // });
+    }, { passive: true });
 
 
 </script>
