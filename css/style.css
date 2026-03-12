@@ -277,7 +277,7 @@ nav .nav-actions .nav-toggle {
 }
 
 /* ── Mobile ── */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     nav {
         padding: 0 20px;
     }
