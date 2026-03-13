@@ -65,7 +65,11 @@ body {
     justify-items: center;
 }
 
-.container,
+.container{
+    width: 100%;
+    padding: 0px 15px 0px 15px;
+
+}
 .container-sm,
 .container-md,
 .container-lg,
