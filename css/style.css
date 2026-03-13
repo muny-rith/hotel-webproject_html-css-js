@@ -33,9 +33,13 @@ html {
 }
 
 body {
-    width: 100%;
+    /* width: 100%; */
     /* add this */
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
+    align-items: center;
+
     background-color: var(--fifth-color);
 }
 
