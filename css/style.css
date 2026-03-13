@@ -156,6 +156,31 @@ body {
     padding: 20px 10px 20px 10px;
 }
 
+.style-input {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.507);
+    background-color: #efeff0dc;
+    cursor: pointer;
+    padding: 0 15px 0 15px;
+}
+
+.btn-submit {
+    width: 100%;
+    /* height: 40px; */
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    background-color: #caa05c;
+    border: 1px solid #caa05c;
+    border-radius: 13px;
+    padding: 13px;
+    margin-top: 10px;
+}
+
+
+
 .navbar {
     position: fixed;
     top: 0;
@@ -221,7 +246,7 @@ a {
     left: 18px;
     right: 18px;
     height: 2px;
-    background: var(--primary-color);
+    background: black;
     transform: scaleX(0);
     transition: transform 0.5s ease;
 }
@@ -231,12 +256,15 @@ a {
 
 
 }
+
 .navbar .nav-links a.active {
     color: var(--primary-color);
 }
 
 .navbar .nav-links a.active::after {
     transform: scaleX(1);
+    background: var(--primary-color);
+
 }
 
 .navbar .nav-links a:hover::after {
@@ -290,7 +318,7 @@ a {
         display: block;
     }
 
-   .navbar .nav-links {
+    .navbar .nav-links {
         position: fixed;
         /* fixed not absolute, so it covers full page on scroll too */
         top: 60px;
@@ -863,29 +891,11 @@ a {
     }
 }
 
-.container-checkin .wrap .btn-submit {
-    width: 100%;
-    /* height: 40px; */
-    font-size: 16px;
-    font-weight: 700;
-    color: white;
-    background-color: #caa05c;
-    border: 1px solid #caa05c;
-    border-radius: 13px;
-    padding: 13px;
-    margin-top: 10px;
-}
 
-.style-input {
-    width: 100%;
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid rgba(128, 128, 128, 0.507);
-    background-color: #efeff0dc;
-    cursor: pointer;
-    /* ត្រឹមត្រូវ */
-    padding: 0 15px 0 15px;
-}
+
+
+
+
 
 
 /* exclusive-deal */
@@ -1285,10 +1295,184 @@ a {
     align-items: center;
     justify-content: center;
     /* font-size: 15px; */
-    <<<<<<< HEAD
+
 }
 
-=======
+.container-breadcrumb {
+    background-image: url('../image/background.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    border-radius: 18px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    /* ← keeps blur inside border-radius */
+
 }
 
->>>>>>>4f6287f5b946998cff145dc2779dec28c6973fd2
+.container-breadcrumb::before {
+    content: '';
+    /* ← MISSING! pseudo element needs this */
+    inset: 0;
+    /* ← MISSING! stretch to fill parent */
+    backdrop-filter: blur(1px);
+    background-color: #00000036;
+    position: absolute;
+}
+
+.container-breadcrumb>* {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* container-contact */
+.container-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+
+}
+
+@media(min-width: 1200px) {
+    .container-contact {
+        flex-direction: row;
+    }
+
+    .container-contact .wrap1 {
+        width: 60%;
+    }
+        .container-contact .wrap2 {
+        width: 40%;
+    }
+}
+@media(min-width: 1400px) {
+
+
+    .container-contact .wrap1 {
+        width: 50%;
+    }
+        .container-contact .wrap2 {
+        width: 50%;
+    }
+}
+
+.container-contact .wrap1 {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.container-contact .wrap1 .title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* justify-content: start; */
+    align-items: start;
+    padding-bottom: 20px;
+
+    p,
+    h6,
+    h1 {
+        text-align: start;
+        /* align-items: start;
+        align-content: starts; */
+        padding: 0;
+        margin: 0;
+    }
+
+    h1,
+    h6 {
+        font-weight: 600;
+    }
+
+    p {
+        color: var(--second-color);
+    }
+}
+
+.container-contact .wrap1 .items {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.container-contact .wrap1 .items .item {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+@media(min-width: 768px) {
+
+    .container-contact .wrap1 .items .item {
+        width: calc(100% / 2 - 25px/2);
+    }
+}
+
+.container-contact .wrap1 .items .item .icon {
+    color: white;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    width: 55px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 13px;
+
+    i {
+        font-size: 24px;
+        /* make it bigger ✅ */
+    }
+}
+
+.container-contact .wrap1 .items .item .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-contact .wrap2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-contact .wrap2 .form-contact {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    padding: 50px 40px;
+    background-color: rgba(212, 202, 185, 0.349);
+    border-radius: 18px;
+    gap: 20px;
+
+    label {
+        font-size: 17px;
+        font-weight: 550;
+    }
+    > * {
+        width: 100%;
+    }
+}
+
+@media(min-width: 768px) {
+    .container-contact .wrap2 .form-contact {
+        .itemName , .itemEmail{
+            width: calc(50% - 10px);
+        }
+    }
+}
+textarea , .textArea {
+    height: 100px;
+    resize: vertical;   /* user can resize up/down only ✅ */
+}
