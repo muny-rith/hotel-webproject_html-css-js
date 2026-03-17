@@ -410,7 +410,7 @@ a {
 }
 
 
-
+/* container explore-room */
 
 .container-explore-room {
     padding-top: 20px;
@@ -449,6 +449,8 @@ a {
     align-items: center;
     justify-content: center;
     padding: 15px;
+
+    overflow: hidden;
     /* border: 1px solid black; */
     /* margin: 20px; */
 }
@@ -460,11 +462,30 @@ a {
 }
 
 .card-room .img {
+    display: block;
     border-radius: 20px;
     height: 80%;
     width: 100%;
     object-fit: cover;
+    overflow: hidden;
+    /* 
+        width: 100%;
+    display: flex;
+    overflow: hidden; */
 }
+
+/* gal */
+.card-room .img img{
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease ;
+}
+.card-room:hover .img img {
+
+    transform: scale(1.1);
+
+}
+
 
 .card-room .wrap1 {
     display: flex;

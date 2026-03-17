@@ -12,7 +12,7 @@ linkss.forEach(link => {
         link.classList.add("active");
     } else if (currentPage === "room-single" && href === "room") { // ✅ treat room-single as part of rooms
         link.classList.add("active");
-        console.log(href);
+
     }
 });
 
@@ -138,25 +138,30 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+const isRoomPage = document.querySelector(".container-explore-room");
+const isSingleRoomPage = document.querySelector(".container-singleRoom");
+
+if (!isRoomPage && !isSingleRoomPage) {
+    localStorage.removeItem("selectedRoom");
+}
+
 // Room page
-if (document.querySelector(".container-explore-room")) {
-  localStorage.removeItem("selectedRoom");
-  document.querySelectorAll(".card-room").forEach(card => {
-    card.addEventListener("click", function () {
-      const name = this.getAttribute("data-name");
-      localStorage.setItem("selectedRoom", name);
-      // console.log(name); 
+if (isRoomPage) {
+    localStorage.removeItem("selectedRoom");
+    document.querySelectorAll(".card-room").forEach(card => {
+        card.addEventListener("click", function () {
+            const name = this.getAttribute("data-name");
+            localStorage.setItem("selectedRoom", name);
+        });
     });
-  });
 }
 
 // Single room page
-if (document.querySelector(".container-breadcrumb")) {
-  const title = document.querySelector(".container-breadcrumb .title h1");
-  const roomName = localStorage.getItem("selectedRoom");
-  // console.log(roomName);
+if (isSingleRoomPage) {
+    const title = document.querySelector(".container-breadcrumb .title h1");
+    const roomName = localStorage.getItem("selectedRoom");
 
-  if (roomName && title) {
-    title.textContent = roomName;
-  }
+    if (roomName && title) {
+        title.textContent = roomName;
+    }
 }
