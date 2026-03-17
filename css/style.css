@@ -54,11 +54,11 @@ body {
 
     h6 {
         color: var(--primary-color);
-        margin: 10px;
+        margin: 10px 0;
     }
 
     h1 {
-        margin: 10px
+        margin: 10px 0;
     }
 }
 
@@ -475,11 +475,12 @@ a {
 }
 
 /* gal */
-.card-room .img img{
+.card-room .img img {
     width: 100%;
     height: 100%;
-    transition: all 500ms ease ;
+    transition: all 500ms ease;
 }
+
 .card-room:hover .img img {
 
     transform: scale(1.1);
@@ -1669,4 +1670,188 @@ textarea,
         display: flex;
         flex-direction: column;
     }
+}
+
+
+.container-aboutUs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.container-aboutUs .container-about {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.container-aboutUs .container-about .img-stack {
+    position: relative;
+    width: 100%;
+    /* extra space so the bottom-right overlay doesn't get clipped */
+    padding: 0 40px 50px 0;
+}
+
+.container-aboutUs .container-about .img-main {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.container-aboutUs .container-about .img-secondary-wrap {
+    position: absolute;
+    bottom: 0;       /* sits at the padded bottom edge */
+    right: 0;        /* sits at the padded right edge */
+    width: 48%;
+    border: 2px solid #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.container-aboutUs .container-about .img-secondary-wrap img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+/* .container-aboutUs .container-about .img {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+} */
+
+@media(width>=992px) {
+    .container-aboutUs .container-about {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+
+        .img-stack {
+            width: 55%;
+        }
+
+        .content {
+            width: 45%;
+
+            .title {
+                justify-items: start;
+                text-align: start;
+
+                h1 {
+                    font-size: 48px;
+                }
+            }
+
+            .sub-title {
+                justify-items: start;
+                text-align: start;
+            }
+        }
+    }
+}
+
+
+.container-meetOurProfessionals {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--third-color);
+    border-radius: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.container-meetOurProfessionals .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+
+}
+
+.card-user {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 10px;
+}
+
+@media(width>=992px) {
+    .container-meetOurProfessionals .wrap .card-user {
+        width: calc(100%/4);
+    }
+}
+
+.card-user .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    overflow: hidden;
+    border-radius: 25px;
+    margin: 10px 0;
+
+    img {
+        display: block;
+        width: 100%;
+        /* object-fit: cover; */
+
+    }
+
+}
+
+.card-user .name-user {
+    /* padding: 10px 0; */
+
+}
+
+.card-user .detail {
+    /* padding: 10px 0; */
+
+}
+
+.card-user .social-media {
+    display: flex;
+    gap: 10px;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        aspect-ratio: 1 / 1;
+        background-color: white;
+        color: var(--primary-color);
+        object-fit: cover;
+        border-radius: 5px;
+        font-size: 20px;
+        transition: all 500ms ease;
+    }
+
+}
+
+.card-user .social-media a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+@media(width>=992px) {
+    .container-meetOurProfessionals {}
 }

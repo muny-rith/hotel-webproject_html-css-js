@@ -8,8 +8,8 @@ linkss.forEach(link => {
 
     if (href === currentPage) {
         link.classList.add("active");
-    } else if (href.includes(currentPage)) {
-        link.classList.add("active");
+    // } else if (href.includes(currentPage)) {
+    //     link.classList.add("active");
     } else if (currentPage === "room-single" && href === "room") { // ✅ treat room-single as part of rooms
         link.classList.add("active");
 
