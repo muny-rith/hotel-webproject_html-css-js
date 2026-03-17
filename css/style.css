@@ -1562,7 +1562,7 @@ textarea,
     .container-singleRoom .wrap2 {
         align-items: start;
         flex-direction: row;
-        gap: 15px;
+        gap: 50px;
 
         .item {
             width: 60%;
