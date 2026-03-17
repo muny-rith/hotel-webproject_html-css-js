@@ -1634,11 +1634,13 @@ textarea,
 
     }
 
-    div {
+    
+    .items {
         width: 100%;
         display: flex;
-
-
+        >*{
+            width: 50%;
+        }
         ul {
             display: flex;
             flex-direction: column;
@@ -1656,6 +1658,7 @@ textarea,
 
 .container-singleRoom .wrap3 .specific {
     display: none;
+
 }
 
 @media (width > 991px) {
