@@ -14,7 +14,6 @@ linkss.forEach(link => {
 const fillerItem = document.querySelector(".items");
 const listImg = document.querySelectorAll(".image");
 
-// only run if .items exists on this page
 if (fillerItem) {
   fillerItem.onclick = (selectedItem) => {
     if (selectedItem.target.classList.contains("item")) {
@@ -96,35 +95,61 @@ window.addEventListener("scroll", () => {
 
 
 
-const accordion = document.getElementById('accordion');
+document.addEventListener('DOMContentLoaded', () => {
+    const accordion = document.getElementById('accordion');
 
-accordion.querySelectorAll('.accordion-header').forEach(header => {
-  header.addEventListener('click', () => {
-    const item = header.closest('.accordion-item');
-    const isOpen = item.classList.contains('open');
+    accordion.querySelectorAll('.accordion-header').forEach(header => {
+        // Keyboard/accessibility setup
+        header.setAttribute('role', 'button');
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('aria-expanded', 'false');
 
-    // Close all
-    accordion.querySelectorAll('.accordion-item').forEach(i => {
-      i.classList.remove('open');
-      i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+        header.addEventListener('click', () => {
+            const item = header.closest('.accordion-item');
+            const isOpen = item.classList.contains('open');
+
+            // Close all
+            accordion.querySelectorAll('.accordion-item').forEach(i => {
+                i.classList.remove('open');
+                i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+            });
+
+            // Open clicked (if it was closed)
+            if (!isOpen) {
+                item.classList.add('open');
+                header.setAttribute('aria-expanded', 'true');
+            }
+        });
+
+        header.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                header.click();
+            }
+        });
     });
-
-    // Open clicked (if it was closed)
-    if (!isOpen) {
-      item.classList.add('open');
-      header.setAttribute('aria-expanded', 'true');
-    }
-  });
-
-  // Keyboard support
-  header.setAttribute('role', 'button');
-  header.setAttribute('tabindex', '0');
-  header.setAttribute('aria-expanded', 'false');
-
-  header.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      header.click();
-    }
-  });
 });
+
+
+// Room page
+if (document.querySelector(".container-explore-room")) {
+    localStorage.removeItem("selectedRoom"); 
+    document.querySelectorAll(".card-room").forEach(card => {
+        card.addEventListener("click", function () {
+            const name = this.getAttribute("data-name");
+            localStorage.setItem("selectedRoom", name);
+            // console.log(name); 
+        });
+    });
+}
+
+// Single room page
+if (document.querySelector(".container-breadcrumb")) {
+    const title = document.querySelector(".container-breadcrumb .title h1");
+    const roomName = localStorage.getItem("selectedRoom");
+    // console.log(roomName);
+
+    if (roomName && title) {
+        title.textContent = roomName;
+    }
+}
